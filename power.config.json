@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "appId": "5c8bfda8-05ff-4c5a-9d24-0d11cd64e579",
+  "appDisplayName": "App From Scratch",
+  "region": "prod",
+  "environmentId": "001551fd-7afb-e13e-a837-ca581a875ffa",
+  "description": " ",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "localAppUrl": "http://localhost:3000",
+  "logoPath": "Default",
+  "connectionReferences": {
+    "7c1cc80e-5aa1-40d5-86f7-b1e4b82c28f5": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_office365users",
+      "displayName": "Office 365 Users",
+      "dataSources": [
+        "office365users"
+      ],
+      "dataSets": {}
+    }
+  },
+  "databaseReferences": {
+    "default.cds": {
+      "dataSources": {
+        "categories": {
+          "entitySetName": "oman_qpccategories",
+          "logicalName": "oman_qpccategory"
+        },
+        "qpcsections": {
+          "entitySetName": "oman_qpcsections",
+          "logicalName": "oman_qpcsection"
+        },
+        "qpcfk_categorysections": {
+          "entitySetName": "oman_qpccategorysections",
+          "logicalName": "oman_qpccategorysection"
+        }
+      },
+      "environmentVariableName": ""
+    }
+  }
+}

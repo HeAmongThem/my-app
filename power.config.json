@@ -33,6 +33,26 @@
         "qpcfk_categorysections": {
           "entitySetName": "oman_qpccategorysections",
           "logicalName": "oman_qpccategorysection"
+        },
+        "qpcreponsetypes": {
+          "entitySetName": "oman_qpcreponsetypes",
+          "logicalName": "oman_qpcreponsetype"
+        },
+        "qpcreponseinfos": {
+          "entitySetName": "oman_qpcreponseinfos",
+          "logicalName": "oman_qpcreponseinfo"
+        },
+        "qpcquestions": {
+          "entitySetName": "oman_qpcquestions",
+          "logicalName": "oman_qpcquestion"
+        },
+        "qpcfk_questions": {
+          "entitySetName": "oman_qpcfk_questions",
+          "logicalName": "oman_qpcfk_question"
+        },
+        "qpcuserreponseforms": {
+          "entitySetName": "oman_qpcuserreponseforms",
+          "logicalName": "oman_qpcuserreponseform"
         }
       },
       "environmentVariableName": ""

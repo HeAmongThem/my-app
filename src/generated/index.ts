@@ -8,10 +8,20 @@ export * as CommonModels from './models/CommonModels';
 export * as Office365UsersModel from './models/Office365UsersModel';
 export * as Oman_qpccategoriesModel from './models/Oman_qpccategoriesModel';
 export * as Oman_qpccategorysectionsModel from './models/Oman_qpccategorysectionsModel';
+export * as Oman_qpcfk_questionsModel from './models/Oman_qpcfk_questionsModel';
+export * as Oman_qpcquestionsModel from './models/Oman_qpcquestionsModel';
+export * as Oman_qpcreponseinfosModel from './models/Oman_qpcreponseinfosModel';
+export * as Oman_qpcreponsetypesModel from './models/Oman_qpcreponsetypesModel';
 export * as Oman_qpcsectionsModel from './models/Oman_qpcsectionsModel';
+export * as Oman_qpcuserreponseformsModel from './models/Oman_qpcuserreponseformsModel';
 
 // Services
 export * from './services/Office365UsersService';
 export * from './services/Oman_qpccategoriesService';
 export * from './services/Oman_qpccategorysectionsService';
+export * from './services/Oman_qpcfk_questionsService';
+export * from './services/Oman_qpcquestionsService';
+export * from './services/Oman_qpcreponseinfosService';
+export * from './services/Oman_qpcreponsetypesService';
 export * from './services/Oman_qpcsectionsService';
+export * from './services/Oman_qpcuserreponseformsService';

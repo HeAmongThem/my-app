@@ -19,10 +19,45 @@ export const dataSourcesInfo = {
     "dataSourceType": "Dataverse",
     "apis": {}
   },
+  "oman_qpcfk_questions": {
+    "tableId": "",
+    "version": "",
+    "primaryKey": "oman_qpcfk_questionid",
+    "dataSourceType": "Dataverse",
+    "apis": {}
+  },
+  "oman_qpcquestions": {
+    "tableId": "",
+    "version": "",
+    "primaryKey": "oman_qpcquestionid",
+    "dataSourceType": "Dataverse",
+    "apis": {}
+  },
+  "oman_qpcreponseinfos": {
+    "tableId": "",
+    "version": "",
+    "primaryKey": "oman_qpcreponseinfoid",
+    "dataSourceType": "Dataverse",
+    "apis": {}
+  },
+  "oman_qpcreponsetypes": {
+    "tableId": "",
+    "version": "",
+    "primaryKey": "oman_qpcreponsetypeid",
+    "dataSourceType": "Dataverse",
+    "apis": {}
+  },
   "oman_qpcsections": {
     "tableId": "",
     "version": "",
     "primaryKey": "oman_qpcsectionid",
+    "dataSourceType": "Dataverse",
+    "apis": {}
+  },
+  "oman_qpcuserreponseforms": {
+    "tableId": "",
+    "version": "",
+    "primaryKey": "oman_qpcuserreponseformid",
     "dataSourceType": "Dataverse",
     "apis": {}
   },

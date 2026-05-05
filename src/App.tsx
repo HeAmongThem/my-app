@@ -6,6 +6,7 @@ import { Oman_qpcsectionsService } from './generated/services/Oman_qpcsectionsSe
 import type { Oman_qpccategorysections } from './generated/models/Oman_qpccategorysectionsModel'
 import type { Oman_qpccategories } from './generated/models/Oman_qpccategoriesModel'
 import type { Oman_qpcsections } from './generated/models/Oman_qpcsectionsModel'
+import { UserReponseForm } from './UserReponseForm'
 
 interface CategorySection {
   categoryId: string
@@ -22,6 +23,8 @@ function App() {
   const [categorySections, setCategorySections] = useState<CategorySection[]>([])
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set())
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set())
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [selectedSection, setSelectedSection] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -117,7 +120,7 @@ function App() {
     setExpandedCategories(newExpanded)
   }
 
-  const toggleSection = (sectionId: string) => {
+  const toggleSection = (sectionId: string, categoryId: string) => {
     const newExpanded = new Set(expandedSections)
     if (newExpanded.has(sectionId)) {
       newExpanded.delete(sectionId)
@@ -125,6 +128,10 @@ function App() {
       newExpanded.add(sectionId)
     }
     setExpandedSections(newExpanded)
+
+    // Sélectionner la section pour afficher le formulaire
+    setSelectedCategory(categoryId)
+    setSelectedSection(sectionId)
   }
 
   return (
@@ -245,7 +252,7 @@ function App() {
                           return (
                             <div
                               key={section.sectionId}
-                              onClick={() => toggleSection(section.sectionId)}
+                              onClick={() => toggleSection(section.sectionId, category.categoryId)}
                               style={{
                                 backgroundColor: 'white',
                                 border: '1px solid #ddd',
@@ -310,39 +317,62 @@ function App() {
           )}
         </div>
 
-        {/* Colonne droite - JSON */}
+        {/* Colonne droite - Formulaire de réponse */}
         <div style={{
           flex: '1',
           minWidth: '400px'
         }}>
-          <div style={{
-            backgroundColor: 'white',
-            border: '1px solid #ddd',
-            borderRadius: '8px',
-            padding: '20px',
-            position: 'sticky',
-            top: '20px'
-          }}>
-            <h3 style={{
-              margin: '0 0 15px 0',
-              fontSize: '16px',
-              fontWeight: 'bold'
+          {selectedCategory && selectedSection ? (
+            <div style={{
+              backgroundColor: 'white',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+              padding: '20px',
+              position: 'sticky',
+              top: '20px'
             }}>
-              Données brutes (JSON)
-            </h3>
-            <pre style={{
-              backgroundColor: '#f5f5f5',
-              padding: '15px',
-              borderRadius: '4px',
-              overflow: 'auto',
-              maxHeight: 'calc(100vh - 150px)',
-              fontSize: '12px',
-              lineHeight: '1.4',
-              margin: 0
+              <UserReponseForm
+                categoryId={selectedCategory}
+                sectionId={selectedSection}
+                userEmail="user@example.com"
+                formName={`form-${selectedCategory}-${selectedSection}`}
+              />
+            </div>
+          ) : (
+            <div style={{
+              backgroundColor: 'white',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+              padding: '40px',
+              position: 'sticky',
+              top: '20px',
+              textAlign: 'center',
+              color: '#666'
             }}>
-              {JSON.stringify(categorySections, null, 2)}
-            </pre>
-          </div>
+              <div style={{
+                fontSize: '48px',
+                marginBottom: '15px',
+                opacity: 0.3
+              }}>
+                📋
+              </div>
+              <h3 style={{
+                margin: '0 0 10px 0',
+                fontSize: '18px',
+                fontWeight: 'bold',
+                color: '#333'
+              }}>
+                Sélectionnez une section
+              </h3>
+              <p style={{
+                margin: 0,
+                fontSize: '14px',
+                lineHeight: '1.5'
+              }}>
+                Cliquez sur une section dans le menu de gauche pour afficher le formulaire de questions correspondant.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

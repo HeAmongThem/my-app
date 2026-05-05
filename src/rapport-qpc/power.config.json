@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "appId": "9d2602b3-fc22-4951-9285-af612a1787d5",
+  "appDisplayName": "Rapport QPC",
+  "region": "prod",
+  "environmentId": "001551fd-7afb-e13e-a837-ca581a875ffa",
+  "description": " ",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "localAppUrl": "http://localhost:3000",
+  "logoPath": "Default",
+  "connectionReferences": {
+    "7dae0284-f73b-476b-a7c3-0251ac618316": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_office365users",
+      "displayName": "Office 365 Users",
+      "dataSources": [
+        "office365users"
+      ],
+      "dataSets": {}
+    }
+  },
+  "databaseReferences": {
+    "default.cds": {
+      "dataSources": {
+        "qpcroles": {
+          "entitySetName": "oman_qpcroles",
+          "logicalName": "oman_qpcrole"
+        },
+        "qpcteams": {
+          "entitySetName": "oman_qpcteams",
+          "logicalName": "oman_qpcteam"
+        },
+        "qpcusers": {
+          "entitySetName": "oman_qpcusers",
+          "logicalName": "oman_qpcuser"
+        },
+        "qpccampaigns": {
+          "entitySetName": "oman_qpccampaigns",
+          "logicalName": "oman_qpccampaign"
+        },
+        "qpcquestiontemps": {
+          "entitySetName": "oman_qpcquestiontemps",
+          "logicalName": "oman_qpcquestiontemp"
+        }
+      },
+      "environmentVariableName": ""
+    }
+  }
+}
